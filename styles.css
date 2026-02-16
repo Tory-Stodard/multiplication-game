@@ -93,6 +93,40 @@ body {
     'CRSV' 0.5,
     'ELSH' 0,
     'ELXP' 0;
+
+  background-color: #360185;
+}
+
+h1 {
+  color: #de1a58;
+  font-weight: bold;
+}
+
+input {
+  border: 2px solid #8f0177;
+  border-radius: 4px;
+  background-color: #360185;
+  color: #8f0177;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  border: 2px solid #8f0177;
+  border-radius: 4px;
+  color: #8f0177;
+  background-color: transparent;
+}
+
+.high-score,
+.score {
+  color: #f4b342;
+}
+
+.problem {
+  color: #8f0177;
 }
 
 .hidden {
