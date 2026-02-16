@@ -5,7 +5,6 @@ const playBtn = document.querySelector('.play-btn');
 const highScoreUI = document.querySelector('.high-score');
 const scoreUI = document.querySelector('.score');
 const problem = document.querySelector('.problem');
-const newHighScorePrompt = document.querySelector('.new-high-score-prompt');
 const playerAnswer = document.querySelector('.player-answer');
 const submitBtn = document.querySelector('.submit-btn');
 
@@ -17,19 +16,13 @@ submitBtn.addEventListener('click', function () {
     playerAnswer.value = '';
     generateProblem();
   } else {
-    if (score == 1) {
-      problem.textContent = 'Game Over 😭 You scored ' + score + ' point';
-    } else {
-      problem.textContent = 'Game Over 😭 You scored ' + score + ' points';
-    }
-
+    manageHighScore();
     scoreUI.classList.add('hidden');
     playerAnswer.classList.add('hidden');
     submitBtn.classList.add('hidden');
     highScoreUI.classList.remove('hidden');
     playBtn.classList.remove('hidden');
     playBtn.textContent = 'Play Again?';
-    manageHighScore();
   }
 });
 
@@ -39,7 +32,6 @@ function playGame() {
   playerAnswer.value = '';
 
   playBtn.classList.add('hidden');
-  newHighScorePrompt.classList.add('hidden');
   highScoreUI.classList.add('hidden');
   scoreUI.classList.remove('hidden');
   problem.classList.remove('hidden');
@@ -67,7 +59,11 @@ function manageHighScore() {
     localStorage.setItem('highScore', 0);
   } else if (score > localStorage.getItem('highScore')) {
     localStorage.setItem('highScore', score);
-    newHighScorePrompt.classList.remove('hidden');
+    if (score == 1) {
+      problem.textContent = '1 point is a new high score 🥳';
+    } else {
+      problem.textContent = score + ' points is a new high score 🥳';
+    }
   }
 
   highScoreUI.textContent = 'High Score: ' + localStorage.getItem('highScore');
