@@ -1,8 +1,18 @@
+let solution;
+
 const playBtn = document.querySelector('.play-btn');
 const scoreUI = document.querySelector('.score');
 const problem = document.querySelector('.problem');
 const playerAnswer = document.querySelector('.player-answer');
 const submitBtn = document.querySelector('.submit-btn');
+
+submitBtn.addEventListener('click', function () {
+  if (playerAnswer.value == solution) {
+    alert('Correct!');
+  } else {
+    alert('Incorrect!');
+  }
+});
 
 function playGame() {
   playBtn.classList.add('hidden');
@@ -19,6 +29,8 @@ function generateProblem() {
   const num2 = getRandomNumber();
 
   problem.textContent = num1 + ' * ' + num2;
+
+  solution = num1 * num2;
 }
 
 function getRandomNumber() {
