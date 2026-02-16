@@ -1,4 +1,4 @@
-let score = 0;
+let score;
 let solution;
 
 const playBtn = document.querySelector('.play-btn');
@@ -15,11 +15,20 @@ submitBtn.addEventListener('click', function () {
     playerAnswer.value = '';
     generateProblem();
   } else {
-    alert('Incorrect!');
+    problem.textContent = 'Game Over! Your score is ' + score;
+    scoreUI.classList.add('hidden');
+    playerAnswer.classList.add('hidden');
+    submitBtn.classList.add('hidden');
+    playBtn.classList.remove('hidden');
+    playBtn.textContent = 'Play Again?';
   }
 });
 
 function playGame() {
+  score = 0;
+  scoreUI.textContent = 'Your Score: ' + score;
+  playerAnswer.value = '';
+
   playBtn.classList.add('hidden');
   scoreUI.classList.remove('hidden');
   problem.classList.remove('hidden');
