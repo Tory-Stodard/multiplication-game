@@ -1,3 +1,7 @@
+/* @Imports */
+
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap');
+
 /* START CSS RESET */
 
 /* 1. Use a more-intuitive box-sizing model */
@@ -80,6 +84,15 @@ h6 {
 
 body {
   text-align: center;
+  font-family: 'Bitcount Grid Double', system-ui;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    'slnt' 0,
+    'CRSV' 0.5,
+    'ELSH' 0,
+    'ELXP' 0;
 }
 
 .hidden {
