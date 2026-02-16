@@ -1,3 +1,4 @@
+let score = 0;
 let solution;
 
 const playBtn = document.querySelector('.play-btn');
@@ -8,7 +9,11 @@ const submitBtn = document.querySelector('.submit-btn');
 
 submitBtn.addEventListener('click', function () {
   if (playerAnswer.value == solution) {
-    alert('Correct!');
+    confetti();
+    score++;
+    scoreUI.textContent = 'Your Score: ' + score;
+    playerAnswer.value = '';
+    generateProblem();
   } else {
     alert('Incorrect!');
   }
