@@ -88,6 +88,7 @@ body {
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
+  font-size: 24px;
   font-variation-settings:
     'slnt' 0,
     'CRSV' 0.5,
@@ -95,6 +96,10 @@ body {
     'ELXP' 0;
 
   background-color: #360185;
+}
+
+header {
+  margin: 1.5rem;
 }
 
 h1 {
