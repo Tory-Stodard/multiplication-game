@@ -1,3 +1,5 @@
+// Global Variables
+
 let score;
 let solution;
 
@@ -8,7 +10,34 @@ const problem = document.querySelector('.problem');
 const playerAnswer = document.querySelector('.player-answer');
 const submitBtn = document.querySelector('.submit-btn');
 
-submitBtn.addEventListener('click', function () {
+// Event Listeners
+
+playerAnswer.addEventListener('keydown', function () {
+  if (event.key == 'Enter') {
+    playRound();
+  }
+});
+
+submitBtn.addEventListener('click', playRound);
+
+// Functions
+
+function playGame() {
+  score = 0;
+  scoreUI.textContent = 'Your Score: ' + score;
+  playerAnswer.value = '';
+
+  playBtn.classList.add('hidden');
+  highScoreUI.classList.add('hidden');
+  scoreUI.classList.remove('hidden');
+  problem.classList.remove('hidden');
+  playerAnswer.classList.remove('hidden');
+  submitBtn.classList.remove('hidden');
+
+  generateProblem();
+}
+
+function playRound() {
   if (playerAnswer.value == solution) {
     confetti();
     score++;
@@ -24,21 +53,6 @@ submitBtn.addEventListener('click', function () {
     playBtn.classList.remove('hidden');
     playBtn.textContent = 'Play Again?';
   }
-});
-
-function playGame() {
-  score = 0;
-  scoreUI.textContent = 'Your Score: ' + score;
-  playerAnswer.value = '';
-
-  playBtn.classList.add('hidden');
-  highScoreUI.classList.add('hidden');
-  scoreUI.classList.remove('hidden');
-  problem.classList.remove('hidden');
-  playerAnswer.classList.remove('hidden');
-  submitBtn.classList.remove('hidden');
-
-  generateProblem();
 }
 
 function generateProblem() {
