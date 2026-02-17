@@ -138,3 +138,12 @@ button {
 .hidden {
   display: none;
 }
+
+@media (hover: hover) {
+  button:hover {
+    border: 2px solid #f4b342;
+    color: #f4b342;
+    cursor: pointer;
+    transition-duration: 0.3s;
+  }
+}
