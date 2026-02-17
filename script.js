@@ -64,6 +64,8 @@ function manageHighScore() {
     } else {
       problem.textContent = score + ' points is a new high score 🥳';
     }
+  } else {
+    problem.textContent = 'Game Over 😞 You scored ' + score + ' points';
   }
 
   highScoreUI.textContent = 'High Score: ' + localStorage.getItem('highScore');
