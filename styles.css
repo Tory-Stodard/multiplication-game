@@ -82,6 +82,8 @@ h6 {
 
 /* END CSS RESET */
 
+/* Element Selctors */
+
 body {
   text-align: center;
   font-family: 'Bitcount Grid Double', system-ui;
@@ -126,6 +128,8 @@ button {
   background-color: transparent;
 }
 
+/* Class Selectors */
+
 .high-score,
 .score {
   color: #f4b342;
@@ -137,6 +141,20 @@ button {
 
 .hidden {
   display: none;
+}
+
+/* Media Queries */
+
+@media (max-width: 500px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 350px) {
+  body {
+    font-size: 16px;
+  }
 }
 
 @media (hover: hover) {
